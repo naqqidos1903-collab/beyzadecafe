@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Menu System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #007BFF;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .menu {
+            margin: 20px 0;
+        }
+        .menu-item {
+            background: white;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #007BFF;
+            color: white;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>QR Menu System</h1>
+    </header>
+    <section class="menu">
+        <h2>Menu Items</h2>
+        <div class="menu-item">
+            <h3>Item 1</h3>
+            <p>Description of Item 1.</p>
+            <button onclick="generateQRCode('Item 1 details')">Get QR Code</button>
+            <div id="qrcode-item1"></div>
+        </div>
+        <div class="menu-item">
+            <h3>Item 2</h3>
+            <p>Description of Item 2.</p>
+            <button onclick="generateQRCode('Item 2 details')">Get QR Code</button>
+            <div id="qrcode-item2"></div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2025 Beyza Cafe</p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+    <script>
+        function generateQRCode(data) {
+            $('#qrcode-item1').empty(); // Clear previous QR code
+            $('#qrcode-item1').qrcode({
+                width: 128,
+                height: 128,
+                text: data
+            });
+        }
+    </script>
+</body>
+</html>
